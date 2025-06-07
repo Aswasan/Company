@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Trionova Corp., where three friends' passion for digital excellence comes alive.">
+
+    <title>Trionova Corp. | Privacy Policy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+
+        /* Basic Resets & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        }
+
+        /* Define CSS Variables for easy theme switching */
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --header-bg: #fff;
+            --card-bg: #f9f9f9;
+            --card-shadow: rgba(163, 161, 161, 0.05);
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --footer-bg: #2c3e50;
+            --footer-text: #ecf0f1;
+            --footer-link-hover: #007bff;
+            --footer-border: #444;
+            --logo-filter-light: grayscale(100%) opacity(0.7); /* Grayscale for light mode logos */
+            --logo-filter-hover-light: grayscale(0%) opacity(1); /* Color for light mode logos on hover */
+            --invert-filter: none; /* No inversion by default */
+        }
+
+        /* Dark Mode styles */
+        body.dark-mode {
+            --bg-color: #000000;
+            --text-color: #e0e0e0;
+            --header-bg: #000000;
+            --card-bg: #000000;
+            --card-shadow: rgba(0,0,0,0.3);
+            --primary-color: #6a0572; /* Darker primary for contrast */
+            --primary-hover: #8e0099;
+            --footer-bg: #020202f6;
+            --footer-text: #e0e0e0;
+            --footer-link-hover: #6a0572;
+            --footer-border: #000000;
+            --logo-filter-light: brightness(0) invert(1); /* Make light logos white in dark mode */
+            --logo-filter-hover-light: brightness(0) invert(1);
+            --invert-filter: invert(1) hue-rotate(180deg); /* General inversion for images not specifically styled */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden; /* Prevent horizontal scroll due to off-screen nav */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+        }
+
+        /* Helper class to prevent body scrolling when navigation is open */
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px var(--card-shadow);
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: rgba(0, 68, 255, 0.591);
+            transform: translateY(-2px);
+            color: white;
+        }
+.circle-text-button {
+    /* Make it a flexible box to center content */
+    display: inline-flex; /* Use inline-flex if you want it to behave like text in a line */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+
+    /* Define size and shape */
+    width: 100px; /* Example fixed width */
+    height: 100px; /* Must be equal to width for a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+
+    /* Add the border (the "circle" itself) */
+    border: 2px solid blue; /* Example border color */
+
+    /* Text styling */
+    color: white; /* Text color */
+    font-size: 1.2em; /* Adjust text size */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline if it's a link */
+
+    /* Optional: background color for a filled circle */
+    /* background-color: rgba(0, 0, 255, 0.2); */
+
+    /* Optional: Smooth transitions for hover effects */
+    transition: all 0.3s ease;
+}
+
+.circle-text-button:hover {
+    border-color: lightblue; /* Change border on hover */
+    /* background-color: rgba(0, 0, 255, 0.4); */ /* Change background on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+        /* Header Section */
+        header {
+            background: var(--header-bg);
+            padding: 15px 0;
+            box-shadow: 0 2px 8px var(--card-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--text-color); /* Logo text color adapts to theme */
+            transition: color 0.3s ease;
+        }
+
+        .logo a {
+            color: inherit;
+        }
+
+        /* Dark Mode Toggle - Small size, icon only, near hamburger */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between toggle and hamburger */
+        }
+
+        .dark-mode-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            color: var(--text-color); /* Text color not used here, but kept for consistency */
+            width: 40px; /* Fixed width and height for a small square/circle */
+            height: 40px;
+            border-radius: 50%; /* Make it circular */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px var(--card-shadow);
+            padding: 0; /* Remove padding to make it truly small */
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .dark-mode-toggle svg {
+            fill: var(--primary-color); /* Icon color adapts */
+            width: 20px; /* Adjust SVG size to fit small button */
+            height: 20px;
+            transition: fill 0.3s ease;
+        }
+        .dark-mode-toggle:hover svg {
+            fill: #fff; /* Icon color on hover */
+        }
+
+        /* Hamburger Menu Icon Styling */
+        .hamburger-menu {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 35px;
+            height: 30px;
+            padding: 5px;
+            position: relative;
+            z-index: 1001;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            background-color: var(--card-bg); /* Light background on hover */
+        }
+
+        .hamburger-menu .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-color); /* Bar color adapts to theme */
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+/* ✅ When menu is active, turn bars white */
+.hamburger-menu.active .bar {
+    background-color: #41a0ff;
+}
+        /* Navigation Links (Full-screen overlay) */
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95); /* Dark semi-transparent overlay */
+            z-index: 999;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        }
+
+        .nav-links.active {
+            transform: translateX(0);
+        }
+
+        .nav-links ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+
+        .nav-links ul li {
+            margin: 25px 0;
+        }
+
+        .nav-links ul li a {
+            color: #fff;
+            font-size: 1.8em;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links ul li a:hover {
+            text-decoration:line-through ;
+            color: #0549db;
+        }
+
+        /* Hamburger menu active state animations (transforms to 'X') */
+        .hamburger-menu.active .bar:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .hamburger-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active .bar:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)), url('https://placehold.co/1500x600/007bff/ffffff?text=Privacy+Policy') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px var(--card-shadow);
+            filter: var(--invert-filter); /* Apply general inversion for hero image */
+        }
+
+        .hero-section h1 {
+            font-size: 3.8em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-section p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* General Section Styling */
+        .our-team-section, .our-works-section, .expertise-section, .contact-section, .project-logos-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--header-bg); /* Use header-bg for sections */
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px var(--card-shadow);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .our-team-section h2, .our-works-section h2, .expertise-section h2, .contact-section h2, .project-logos-section h2 {
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: var(--text-color); /* Heading color adapts */
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .our-team-section h2::after, .our-works-section h2::after, .expertise-section h2::after, .contact-section h2::after, .project-logos-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Our Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            justify-items: center;
+        }
+
+        .team-member {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--card-shadow);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid var(--primary-color);
+            filter: var(--invert-filter); /* Apply general inversion to team member images */
+            transition: filter 0.3s ease, border-color 0.3s ease;
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            color: var(--text-color);
+            font-style: italic;
+        }
+
+        /* Project Logos Section */
+        .project-logos-section {
+            background-color: var(--bg-color); /* Use general background */
+            transition: background-color 0.3s ease;
+        }
+
+       .logo-carousel-container {
+    
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+   
+   
+ 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-carousel {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-logos 15s linear infinite alternate;
+}
+
+.logo-carousel a {
+    flex: 0 0 33.33%; /* Show 5 logos at a time (100 / 5 = 20%) */
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.logo-carousel a:hover {
+    transform: scale(1.1);
+}
+
+.logo-carousel img {
+    height: 100%; /* Fill container height */
+    width: auto; /* Maintain aspect ratio */
+    max-height: 80px; /* Prevent overscaling */
+    object-fit: contain; /* Keep logo nicely inside box */ 
+}
+
+.logo-carousel a:hover img {
+    filter: var(--logo-filter-hover-light); /* Full color on hover */
+    opacity: 1;
+}
+
+/* Scroll animation keyframes */
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Optional: Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .logo-carousel a {
+        flex: 0 0 20%; /* Show 3 logos on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-carousel a {
+        flex: 0 0 20%; /* Show 2 logos on mobile */
+        animation: scroll-logos 15s linear infinite;
+    }
+}
+
+        
+        /* Specific filter for project logos in dark mode to make them white */
+        body.dark-mode .logo-carousel img {
+            filter: brightness(0) invert(1); /* Makes any color logo white */
+        }
+        body.dark-mode .logo-carousel a:hover img {
+            filter: brightness(0) invert(1); /* Stays white on hover in dark mode */
+        }
+
+        /* Keyframe animation for continuous scrolling */
+        @keyframes scroll-logos {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%); /* Scroll exactly half the content to loop seamlessly */
+            }
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .portfolio-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--card-shadow);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portfolio-link:hover .project-item {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--card-shadow);
+        }
+
+        .project-item img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            display: block;
+            filter: var(--invert-filter); /* Apply general inversion to project images */
+            transition: filter 0.3s ease;
+        }
+
+        .project-item h3 {
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            font-size: 1.6em;
+        }
+
+        .project-item p {
+            font-size: 1em;
+            color: var(--text-color);
+        }
+
+        /* Expertise Section */
+        .skills-grid {
+            display: grid;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .skill-item {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--card-shadow);
+        }
+
+        .skill-item svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            fill: var(--primary-color); /* SVG icon color adapts */
+            transition: fill 0.3s ease;
+        }
+
+        .skill-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .skill-item p {
+            font-size: 1em;
+            color: var(--text-color);
+        }
+
+        /* Contact Section */
+        .contact-section p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: var(--text-color);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            gap: 20px;
+            padding: 20px;
+            background-color: var(--card-bg); /* Form background adapts */
+            border-radius: 10px;
+            box-shadow: 0 2px 15px var(--card-shadow);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid var(--text-color); /* Border color adapts */
+            border-radius: 8px;
+            font-size: 1.1em;
+            width: 100%;
+            background-color: var(--bg-color); /* Input background adapts */
+            color: var(--text-color); /* Input text color adapts */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        .contact-form .btn {
+            width: auto;
+            align-self: center;
+            padding: 14px 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 60px 0 25px;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            box-shadow: 0 -2px 8px var(--card-shadow);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: left;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 280px;
+            margin: 20px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.6em;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .footer-col p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: var(--footer-text);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--footer-text);
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--footer-link-hover);
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: var(--footer-text);
+            margin-right: 20px;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--footer-link-hover);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid var(--footer-border);
+            padding-top: 25px;
+            font-size: 0.9em;
+            color: var(--footer-text);
+        }
+
+        /* Scroll-to-Top Link (Now a "word" instead of a "button") */
+        #scrollTopLink {
+            position: fixed;
+            bottom: 45px;
+            right: -10px;
+         
+            color: #000000;
+            padding: 8px 15px; /* Adjust padding to fit text */
+           
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+           
+            z-index: 900; /* Below nav but above other content */
+               /* Rotate the text vertically */
+    transform: rotate(-90deg);
+    
+        }
+
+        #scrollTopLink.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #scrollTopLink:hover {
+           color: cyan; /* Bright neon green */
+   
+            
+        }
+        
+ /* Dark Mode specific style for Scroll-to-Top link */
+        body.dark-mode #scrollTopLink {
+            
+            color: var(--text-color); /* Text color from dark mode variables */
+            
+        }
+
+        body.dark-mode #scrollTopLink:hover {
+         
+            color: var(--text-color);
+        }
+@media (max-width: 600px) {
+    #scrollTopLink {
+     
+        right: -35px;
+       
+       
+    }
+}
+        /* Responsive Adjustments for Expertise Grid (Pyramid/Image Layout) */
+        @media (max-width: 479px) { /* Very small mobile: 1 column */
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) { /* Small mobile: 2 columns */
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 600px; /* Keep it constrained for better 2-column look */
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) { /* Tablet/Medium screens: 3 columns */
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 900px; /* Keep it constrained for better 3-column look */
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 1200px) { /* Large Desktop: 4 columns (for the 4-3 distribution of 7 items as in image) */
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 1200px; /* Allow wider spread */
+                margin: 0 auto;
+            }
+            .project-logos-section h2 {
+                font-size: 2.5em;
+            }
+        }
+
+        /* General Media Queries for overall site elements */
+        @media (max-width: 1023px) { /* Applies to screens smaller than 1024px */
+            .hero-section h1 {
+                font-size: 3em;
+            }
+            .hero-section p {
+                font-size: 1.2em;
+            }
+            .our-team-section h2, .our-works-section h2, .expertise-section h2, .contact-section h2, .project-logos-section h2 {
+                font-size: 2.5em;
+            }
+            .project-item h3 {
+                font-size: 1.4em;
+            }
+            .skill-item h3 {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 767px) { /* Applies to screens smaller than 768px (excluding very small defined above) */
+            .container {
+                width: 95%; /* Wider container on smaller screens */
+            }
+             .privacy-hero-section {
+                padding: 80px 0;
+                min-height: 450px;
+            }
+            .privacy-hero-section h1 {
+                font-size: 2.5em;
+                margin-bottom: 15px;
+            }
+            .privacy-hero-section p {
+                font-size: 1.1em;
+                margin-bottom: 30px;
+            }
+
+            .privacy-content-section {
+                padding: 60px 0;
+            }
+
+            .privacy-content-section h2 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+
+            /* On small screens, keep section backgrounds and margins to create boxes */
+            .privacy-content-section {
+                background-color: var(--header-bg);
+                margin: 20px auto;
+                border-radius: 15px;
+                box-shadow: 0 4px 15px var(--card-shadow);
+            }
+            .hero-section {
+                padding: 80px 0;
+                min-height: 450px;
+            }
+            .hero-section h1 {
+                font-size: 2.5em;
+                margin-bottom: 15px;
+            }
+            .hero-section p {
+                font-size: 1.1em;
+                margin-bottom: 30px;
+            }
+
+            .our-team-section, .our-works-section, .expertise-section, .contact-section, .project-logos-section {
+                padding: 60px 0;
+            }
+
+          
+
+            .project-item, .skill-item, .team-member {
+                padding: 20px;
+            }
+
+            .contact-form {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .contact-form input, .contact-form textarea {
+                font-size: 1em;
+            }
+
+            .contact-form .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+
+            .footer-content {
+                flex-direction: column; /* Stack footer columns */
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .footer-col {
+                min-width: unset; /* Remove min-width */
+                margin: 15px 0;
+            }
+
+            .footer-col ul {
+                padding: 0;
+            }
+
+            .social-links {
+                justify-content: center; /* Center social links */
+            }
+        }
+
+        @media (max-width: 479px) { /* Specific adjustments for very small screens */
+            .logo {
+                font-size: 1.5em;
+            }
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            .hero-section p {
+                font-size: 0.95em;
+            }
+            .our-team-section h2, .our-works-section h2, .expertise-section h2, .contact-section h2, .project-logos-section h2 {
+                font-size: 1.8em;
+            }
+            .nav-links ul li a {
+                font-size: 1.4em;
+            }
+            .project-item h3 {
+                font-size: 1.2em;
+            }
+            .skill-item h3 {
+                font-size: 1.4em;
+            }
+            .header-actions { /* Adjust gap for very small screens if needed */
+                gap: 10px;
+            }
+            .dark-mode-toggle {
+                width: 35px; /* Slightly smaller for very small screens */
+                height: 35px;
+            }
+            .dark-mode-toggle svg {
+                width: 18px; /* Adjust SVG size */
+                height: 18px;
+            }
+        }
+     /* General Section Styling - Modified to remove "divided box" appearance */
+        .mission-vision-section,
+        .about-team-section { /* Renamed from .our-team-section for clarity in this file */
+            padding: 80px 0; /* Keep internal padding */
+            text-align: center;
+            background-color: var(--bg-color); /* Match body background */
+            margin: 0; /* Remove horizontal margin */
+            border-radius: 0; /* Remove border-radius */
+            box-shadow: none; /* Remove box-shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Add spacing between sections */
+        .mission-vision-section,
+        .about-team-section {
+            margin-bottom: 40px; /* Add consistent vertical spacing */
+        }
+        /* Remove margin from the last section */
+        .about-team-section { /* Assuming this is the last section before the footer */
+            margin-bottom: 0;
+        }
+
+
+        .mission-vision-section h2,
+        .about-team-section h2 {
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: var(--text-color); /* Heading color adapts */
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .mission-vision-section h2::after,
+        .about-team-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Mission/Vision Content */
+        .mission-vision-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .mission-vision-content h3 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .mission-vision-content p {
+            font-size: 1.1em;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+               /* Hero Section - Privacy Policy Specific */
+        .privacy-hero-section {
+            background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)), url('https://placehold.co/1500x600/007bff/ffffff?text=Privacy+Policy') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px var(--card-shadow);
+            filter: var(--invert-filter); /* Apply general inversion for hero image */
+        }
+
+        .privacy-hero-section h1 {
+            font-size: 3.8em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .privacy-hero-section p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* General Section Styling - Modified to remove "divided box" appearance */
+        .privacy-content-section {
+            padding: 80px 0; /* Keep internal padding */
+            text-align: center;
+            background-color: var(--bg-color); /* Match body background */
+            margin: 0; /* Remove horizontal margin */
+            border-radius: 0; /* Remove border-radius */
+            box-shadow: none; /* Remove box-shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Add spacing between sections */
+        .privacy-content-section {
+            margin-bottom: 40px; /* Add consistent vertical spacing */
+        }
+        /* Remove margin from the last section */
+        .privacy-content-section:last-of-type { /* Assuming this is the last section before the footer */
+            margin-bottom: 0;
+        }
+
+
+        .privacy-content-section h2 {
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: var(--text-color); /* Heading color adapts */
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .privacy-content-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+   
+        
+       /* Privacy Policy Content */
+        .privacy-article {
+            max-width: 800px; /* Narrower content for readability */
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .privacy-article h3 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .privacy-article p, .privacy-article ul, .privacy-article ol {
+            font-size: 1.1em;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .privacy-article ul, .privacy-article ol {
+            padding-left: 25px;
+        }
+
+        .privacy-article li {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1023px) { /* Applies to screens smaller than 1024px */
+            .privacy-hero-section h1 {
+                font-size: 3em;
+            }
+            .privacy-hero-section p {
+                font-size: 1.2em;
+            }
+            .privacy-content-section h2 {
+                font-size: 2.5em;
+            }
+            .privacy-article h3 {
+                font-size: 1.6em;
+            }
+        }
+
+    
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    margin: 0 12px;
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00bcd4;
+}
+
+copyright p {
+    margin: 0;
+    font-size: 15px;
+}
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 0 12px;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tooltip:hover {
+    color: #00bcd4;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: #000000;
+    color: #00bcd4;
+    text-align: center;
+    border-radius: 4px;
+    padding: 6px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%; /* Position above icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+/* Arrow */
+.tooltip .tooltiptext::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* bottom of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000000 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Trionova Corp.</a>
+            </div>
+            <div class="header-actions">
+               
+                <div id="darkModeToggle" class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#our-team">Our Team</a></li>
+                    <li><a href="index.html#project-logos">Our Projects</a></li>
+                    <li><a href="index.html#our-works">Our Works</a></li>
+                    <li><a href="index.html#expertise">Expertise</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p>Your privacy is important to us. This policy explains how we collect, use, and protect your data.</p>
+                
+            </div>
+        </section>
+   <!-- Privacy Content Section -->
+        <section id="policy-details" class="privacy-content-section">
+            <div class="privacy-article">
+                <h2>Our Commitment to Your Privacy</h2>
+                <p>This Privacy Policy describes how Trionova Corp. collects, uses, and discloses information, and what choices you have with respect to the information. This Policy applies to information we collect when you use our website, products, and services (collectively, the "Services").</p>
+
+                <h3>Information We Collect</h3>
+                <p>We collect information to provide better services to all our users. The types of information we collect include:</p>
+                <ul>
+                    <li>**Personal Information:** Such as your name, email address, phone number, and any other information you voluntarily provide to us when you fill out forms, subscribe to newsletters, or contact us.</li>
+                    <li>**Usage Data:** Information about how you access and use the Services, including your IP address, browser type, operating system, referral URLs, pages viewed, and the dates and times of your visits.</li>
+                    <li>**Cookies and Tracking Technologies:** We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.</li>
+                </ul>
+
+                <h3>How We Use Your Information</h3>
+                <p>We use the collected information for various purposes, including:</p>
+                <ul>
+                    <li>To provide and maintain our Service.</li>
+                    <li>To notify you about changes to our Service.</li>
+                    <li>To allow you to participate in interactive features of our Service when you choose to do so.</li>
+                    <li>To provide customer support.</li>
+                    <li>To gather analysis or valuable information so that we can improve our Service.</li>
+                    <li>To monitor the usage of our Service.</li>
+                    <li>To detect, prevent and address technical issues.</li>
+                    <li>To provide you with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information.</li>
+                </ul>
+
+                <h3>Data Security</h3>
+                <p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+                <h3>Your Data Protection Rights</h3>
+                <p>Depending on your location, you may have the following data protection rights:</p>
+                <ul>
+                    <li>The right to access, update or to delete the information we have on you.</li>
+                    <li>The right of rectification.</li>
+                    <li>The right to object.</li>
+                    <li>The right of restriction.</li>
+                    <li>The right to data portability.</li>
+                    <li>The right to withdraw consent.</li>
+                </ul>
+                <p>We aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data. If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please contact us.</p>
+
+                <h3>Changes to This Privacy Policy</h3>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.</p>
+                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+                <h3>Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <ul>
+                    <li>By email: trionovacorp.com</li>
+                    <li>By visiting this page on our website: <a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+<footer>
+    <div class="footer-container">
+        <!-- Social Icons with tooltips -->
+        <div class="social-icons">
+            <a href="https://facebook.com/yourpage" target="_blank" class="tooltip">
+                <i class="fab fa-facebook-f"></i>
+                <span class="tooltiptext">Facebook</span>
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" class="tooltip">
+                <i class="fab fa-twitter"></i>
+                <span class="tooltiptext">Twitter</span>
+            </a>
+            <a href="https://instagram.com/yourprofile" target="_blank" class="tooltip">
+                <i class="fab fa-instagram"></i>
+                <span class="tooltiptext">Instagram</span>
+            </a>
+            <a href="https://linkedin.com/company/yourpage" target="_blank" class="tooltip">
+                <i class="fab fa-linkedin-in"></i>
+                <span class="tooltiptext">LinkedIn</span>
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2025 Trionova Corp. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <div id="scrollTopLink">Scroll TO Top →</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navLinks = document.querySelector('.nav-links');
+            const navLinksUl = document.querySelector('.nav-links ul');
+            const scrollTopLink = document.getElementById('scrollTopLink');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            const sunIcon = darkModeToggle.querySelector('.sun-icon');
+            const moonIcon = darkModeToggle.querySelector('.moon-icon');
+
+            // --- Hamburger Menu Logic ---
+            function toggleMenu() {
+                hamburgerMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('no-scroll');
+            }
+
+            hamburgerMenu.addEventListener('click', toggleMenu);
+
+            navLinksUl.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    hamburgerMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    body.classList.remove('no-scroll');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+
+            // --- Smooth Scroll for Internal Links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Offset for fixed header
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- Scroll-to-Top Logic ---
+            const scrollThreshold = 300; // Pixels to scroll before showing "Top" link
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > scrollThreshold) {
+                    scrollTopLink.classList.add('visible');
+                } else {
+                    scrollTopLink.classList.remove('visible');
+                }
+            });
+
+            scrollTopLink.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // --- Dark Mode Logic ---
+            // Function to apply theme based on preference
+            function applyTheme(isDark) {
+                if (isDark) {
+                    body.classList.add('dark-mode');
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'inline-block';
+                } else {
+                    body.classList.remove('dark-mode');
+                    sunIcon.style.display = 'inline-block';
+                    moonIcon.style.display = 'none';
+                }
+            }
+
+            // Check for saved theme preference or set default
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                applyTheme(true);
+            } else {
+                applyTheme(false); // Default to light mode if no preference or 'light'
+            }
+
+            // Toggle dark mode on button click
+            darkModeToggle.addEventListener('click', () => {
+                const isDark = body.classList.contains('dark-mode');
+                applyTheme(!isDark);
+                localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+            });
+        });
+     
+    </script>
+</body>
+</html>
